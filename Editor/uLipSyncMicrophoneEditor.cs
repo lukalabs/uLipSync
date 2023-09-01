@@ -3,8 +3,8 @@ using UnityEditor;
 
 namespace uLipSync
 {
-
-[CustomEditor(typeof(uLipSyncMicrophone))]
+#if UNITY_EDITOR || !UNITY_WEBGL
+    [CustomEditor(typeof(uLipSyncMicrophone))]
 public class uLipSyncMicrophoneEditor : Editor
 {
     uLipSyncMicrophone mic => target as uLipSyncMicrophone;
@@ -105,5 +105,5 @@ public class uLipSyncMicrophoneEditor : Editor
         EditorGUILayout.EndHorizontal();
     }
 }
-
+#endif
 }

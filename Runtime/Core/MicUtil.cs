@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace uLipSync
 {
-
-public struct MicDevice
+#if UNITY_EDITOR || !UNITY_WEBGL
+    public struct MicDevice
 {
     public string name;
     public int index;
@@ -32,5 +32,5 @@ public static class MicUtil
         return list;
     }
 }
-
+#endif
 }

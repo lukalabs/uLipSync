@@ -100,16 +100,16 @@ public static class EditorUtil
         if (prop == null) return;
         EditorGUILayout.PropertyField(prop);
     }
-
-    public static void DrawMicSelector(ref int index)
+#if UNITY_EDITOR || !UNITY_WEBGL
+        public static void DrawMicSelector(ref int index)
     {
         var mics = MicUtil.GetDeviceList();
         var micNames = mics.Select(x => x.name).ToArray();
         index = EditorGUILayout.Popup("Device", index, micNames);
     }
-
-    public static void DrawBackgroundRect(Rect rect, Color bg, Color line)
-    {
+#endif
+        public static void DrawBackgroundRect(Rect rect, Color bg, Color line)
+        {
         Handles.DrawSolidRectangleWithOutline(rect, bg, line);
     }
 
