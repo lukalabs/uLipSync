@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace uLipSync
 {
-#if UNITY_EDITOR || !UNITY_WEBGL
+#if UNITY_EDITOR
     [CustomEditor(typeof(uLipSyncMicrophone))]
 public class uLipSyncMicrophoneEditor : Editor
 {

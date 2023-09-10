@@ -100,7 +100,7 @@ public static class EditorUtil
         if (prop == null) return;
         EditorGUILayout.PropertyField(prop);
     }
-#if UNITY_EDITOR || !UNITY_WEBGL
+#if UNITY_EDITOR
         public static void DrawMicSelector(ref int index)
     {
         var mics = MicUtil.GetDeviceList();
