@@ -306,17 +306,6 @@ public class uLipSync : MonoBehaviour
     void UpdateAudioSource()
     {
         if (audioSourceProxy == _currentAudioSourceProxy) return;
-
-        if (_currentAudioSourceProxy)
-        {
-            _currentAudioSourceProxy.onAudioFilterRead.RemoveListener(OnDataReceived);
-        }
-
-        if (audioSourceProxy)
-        {
-            audioSourceProxy.onAudioFilterRead.AddListener(OnDataReceived);
-        }
-
         _currentAudioSourceProxy = audioSourceProxy;
     }
 
