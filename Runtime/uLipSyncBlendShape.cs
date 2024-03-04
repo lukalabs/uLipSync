@@ -170,6 +170,7 @@ public class uLipSyncBlendShape : AnimationBakableMonoBehaviour
             if (bs.index < 0) continue;
             float weight = skinnedMeshRenderer.GetBlendShapeWeight(bs.index);
             weight += bs.weight * bs.maxWeight * volume * 100;
+            if (weight>=100) weight = 100;
             skinnedMeshRenderer.SetBlendShapeWeight(bs.index, weight);
         }
     }
